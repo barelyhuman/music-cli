@@ -7,8 +7,7 @@ import (
 	"net/url"
 	"flag"
 	"os"
-	
-	"../lib/models/song"
+	"github.com/barelyhuman/music-cli/lib/models/song"
 )
 
 func main() {
