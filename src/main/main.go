@@ -2,12 +2,13 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
-	"music-cli/src/lib/models/song"
+	"fmt"	
 	"net/http"
 	"net/url"
 	"flag"
 	"os"
+	
+	"../lib/models/song"
 )
 
 func main() {
