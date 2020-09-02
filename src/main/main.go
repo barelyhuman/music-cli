@@ -7,13 +7,19 @@ import (
 	"net/http"
 	"net/url"
 	"flag"
+	"os"
 )
 
 func main() {
 
-	searchTerm := flag.String("search", "", "Song to search for")
+	searchTerm := flag.String("s", "", "Song to search for (Required)")
 
 	flag.Parse();
+
+	if(len(*searchTerm)<=0){
+		flag.Usage()
+		os.Exit(2)
+	}
 
 	fmt.Printf("---\nSearching for: %s\n---\n", *searchTerm);
 
@@ -23,7 +29,7 @@ func main() {
 	
 
 	resp, err := http.Get(url)
-	
+
 	if err != nil {
 		fmt.Println(err)
 	}
